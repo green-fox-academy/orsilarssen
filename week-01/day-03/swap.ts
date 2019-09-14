@@ -1,9 +1,9 @@
 'use strict';
 
 // Swap the values of these variables
-let a: number = 123;
-let b: number = 526;
+let aNum: number = 123;
+let bNum: number = 526;
 
-console.log(b);
-console.log(a);
+console.log(bNum);
+console.log(aNum);
 
