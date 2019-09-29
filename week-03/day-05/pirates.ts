@@ -18,45 +18,70 @@ Add a parrot.*/
 class Pirate {
     private _drunkLevel: number;
     private _alive: boolean = true;
+    passOut: boolean = false;
 
     public constructor(drunkLevel: number = 0) {
         this._drunkLevel = drunkLevel;
     }
 
     public drinkSomeRum(): void {
-        if (this._alive = true && this._drunkLevel <= 0) {
+        
+        if (this._alive = false){
+            console.log('Pirate is dead, he cannot drink anymore')
+        } else if (this._drunkLevel <= 4) {
+            console.log('Pour me anudder!');
             this._drunkLevel++;
-        } else if (this._drunkLevel < 5) {
-            this._drunkLevel++;
+        } else if (this._drunkLevel == 5) {
             this.howsItGoingMate();
-        } else {
+            this._drunkLevel++;
+        } else if (this._drunkLevel == 6 ){
             this.die();
             console.log('Pirate iz ded...');
         }
     }
 
     public howsItGoingMate(): void {
-        if (this._drunkLevel < 4) {
-            console.log('Pour me anudder!');
-        } else if (this._drunkLevel < 5) {
-            console.log('Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?');
-        }
+        console.log('Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?');
     }
 
     public die(): void {
         this._alive = false;
     }
+
+    public brawl(Pirate): void {
+        let randomNum: number = Math.floor(Math.random()*Math.floor(3));
+        if (randomNum == 0){
+            this._alive=false;
+            console.log('The pirate iz ded...')
+        }
+        else if ( randomNum == 1){
+            Pirate._alive=false;
+            console.log('The other pirate died...')
+        }
+        else if (randomNum == 2){
+            this.passOut=true;
+            Pirate.passOut=true;
+            console.log('...both pirate passed out...Zzzz...')
+        }
+    }
+        
 }
 
-let alcohol = new Pirate;
+let JackSparrow = new Pirate;
 
-alcohol.drinkSomeRum();
-alcohol.drinkSomeRum();
+let Hook = new Pirate;
 
-alcohol.drinkSomeRum();
-alcohol.drinkSomeRum();
-alcohol.drinkSomeRum();
-alcohol.drinkSomeRum();
+JackSparrow.drinkSomeRum();
+JackSparrow.drinkSomeRum();
+JackSparrow.drinkSomeRum();
+
+Hook.brawl(JackSparrow);
+
+/*JackSparrow.drinkSomeRum();
+JackSparrow.drinkSomeRum();
+JackSparrow.drinkSomeRum();
+JackSparrow.drinkSomeRum();*/
+
 
 
 
