@@ -1,6 +1,6 @@
 'use strict'
 
-let abc: string []= ["Arthur", "Boe", "Chloe"]
+let abc: string []= ["Arthur", "Boe", "Chloe"];
 
 console.log(abc [2], abc [1], abc [0]);
 

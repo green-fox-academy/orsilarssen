@@ -30,12 +30,10 @@ class DiceSet {
         }
     }
 
-    is6(index?: number): boolean {
+    is6(index: number): boolean {
         return this.dice[index] ==6;  
     }
 }
-
-
 
 // You have a `DiceSet` class which has a list for 6 dice
 // You can roll all of them with roll()

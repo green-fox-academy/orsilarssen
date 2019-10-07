@@ -50,4 +50,4 @@ class BlogPost {
 
 let blogPost1 = new BlogPost('Lorem Ipsum','John Doe','2000.05.04.', 'Lorem ipsum dolor sit amet.')
 
-console.log(blogPost1)
+console.log(blogPost1)  

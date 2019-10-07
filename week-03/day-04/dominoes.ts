@@ -8,11 +8,11 @@ class Domino {
 function initializeDominoes(): Domino[] {
     let dominoes = [];
     dominoes.push(new Domino(5, 2));
+    dominoes.push(new Domino(7, 1));
     dominoes.push(new Domino(4, 6));
     dominoes.push(new Domino(1, 5));
     dominoes.push(new Domino(6, 7));
     dominoes.push(new Domino(2, 4));
-    dominoes.push(new Domino(7, 1));
     return dominoes;
 }
 
@@ -31,12 +31,12 @@ function print(dominoes: Domino[]) {
 //console.log(dominoes[0].values[0])//
 
 for (let i = 0; i < dominoes.length; i++) {
-    for (let k = 0; k < dominoes.length; k++) {
-        if (dominoes[i].values[1] == dominoes[k].values[0]) {
+        let prev = dominoes[i].values
+        console.log(`comparing: ${dominoes[i].values} ${prev}`);
+        
+        if (prev[1] == dominoes[i].values[0]) {
             console.log(dominoes[i])
-            console.log(dominoes[k])
         }
-    }
 }
 
 

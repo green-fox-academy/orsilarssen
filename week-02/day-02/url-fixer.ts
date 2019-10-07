@@ -6,8 +6,8 @@
 
 let url: string = 'https//www.reddit.com/r/nevertellmethebots'; {
 console.log(url.length);
-console.log(url.length - 5);}
-let newUrl: string = (url.slice(0,-37)+ ':');
+console.log(url.length - 5);
+console.log(url.slice(0,-37)+ ':');}
 
 
 
