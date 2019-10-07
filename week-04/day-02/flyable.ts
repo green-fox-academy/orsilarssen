@@ -23,7 +23,7 @@ class Helicopter extends Vehicle implements Flyable{
   }
 }
 
-class Bird implements Flyable{
+class Bird2 implements Flyable{
   public land(): void{
     console.log('Have a safe landing, Birdie!');
   }
