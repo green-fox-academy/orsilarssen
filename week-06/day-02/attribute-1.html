@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: Attributes</title>
+  </head>
+  <body>
+
+    <img src="https://static.wixstatic.com/media/f4461b_83457ca5dd844c71a760d36e6583d0ff.png/v1/fill/w_168,h_168,al_c,usm_0.66_1.00_0.01/f4461b_83457ca5dd844c71a760d36e6583d0ff.png">
+    <a href="http://www.themostamazingwebsiteontheinternet.com/">The Best Website Ever</a>
+    <button>Click me!</button>
+    <button class="this-one">Click me!</button>
+
+    <!-- You can work in the html or in a separate js file. Like:
+    <script>
+      Write the image's url to the console.
+      Replace the image with a picture of your favorite animal.
+      Make the link point to the Green Fox Academy website.
+      Disable the second button.
+      Replace its text with 'Don't click me!'.
+    </script>
+    OR
+    <script src="attribute-1.js"></script> -->
+
+  </body>
+  <script>
+  'use strict';
+
+  var link = document.querySelector('img');
+  console.log('image URL', link.getAttribute('src'));
+
+  link.setAttribute('src','https://ca-times.brightspotcdn.com/dims4/default/5fa4e84/2147483647/strip/true/crop/2048x1152+0+0/resize/840x473!/quality/90/?url=https%3A%2F%2Fca-times.brightspotcdn.com%2F8e%2F6c%2F5e720d8916b586df1198f657a282%2Fla-1555980769-hvs41eif0r-snap-image');
+    link.height = 47;
+    link.width = 87.3;
+
+  let greenFox = document.querySelector('a');
+  greenFox.setAttribute('href', 'https://www.greenfoxacademy.com/?gclid=EAIaIQobChMI7tq30pKw5QIVTcayCh3vJwIlEAAYASAAEgK4nPD_BwE');
+
+  </script>
+</html>
