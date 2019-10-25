@@ -13,17 +13,15 @@
 <body>
   <div class="container">
     <div class="arrow left">
-      <img src="assets/arrow.svg" alt="arrow left">
+      <img src="arrow.svg" alt="arrow left">
     </div>
     <div class="item middle">
-      <ul>
         <% for (let i=0; i< images.length; i++){ %>
-        <li><img src="<%=images[i]%>"></li>
+        <img src="<%=images[i]%>">
         <%}%>
-            </ul>
       </div>
       <div class="arrow right">
-          <img src="assets/arrow.svg" alt="arrow right">
+          <img src="arrow.svg" alt="arrow right">
       </div>
     </div>
   </body>

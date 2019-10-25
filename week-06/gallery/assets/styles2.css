@@ -1,9 +1,6 @@
 body {
-  display: flex;
   background: rgb(227,228,233);
   background: radial-gradient(circle, rgba(227,228,233,1) 0%, rgba(103,102,102,1) 100%);
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -13,24 +10,23 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   width: 80%;
   height: 60%;
+  margin: 10%;
 }
 
 .arrow {
-  width: 2%;
+  width: 5%;
   background-color: white;
   flex-grow: 1;
+  align-items: center;
 }
 
 .middle {
+  display: flex;
   background-color: #cccccc;
   flex-grow: 12;
-}
-
-li {
-  list-style-type: none;
+  justify-content: center;
 }
 
 img { 
   max-width: 60%;
-  align-self: center;
 }
