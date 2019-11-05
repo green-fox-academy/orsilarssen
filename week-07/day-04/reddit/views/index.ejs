@@ -1,0 +1,10 @@
+<% rows.forEach((post) => { %>
+                        <tr>
+                            <br>
+                            <th scope="row"><%= post.id %></th>
+                            <td><%= post.url %></td>
+                            <td><%= post.title %></td>
+                            <td><%= post.timestamp %></td>
+                            <td><%= post.users %><</td>
+                        </tr>
+                    <% }) %>

@@ -7,6 +7,9 @@ Display the list of the first 16 results's static thumbnail
 If the user clicks on the thumbnail, display the animated GIF*/
 
 'use strict';
+api.giphy.com/v1/gifs/search
+
+https://api.giphy.com/v1/
 
 getGifs();
 // setTimeout(getJoke, 4000);
