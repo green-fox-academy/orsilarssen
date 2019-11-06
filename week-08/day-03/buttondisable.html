@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Button Disable</title>
+  <style>
+
+    button{
+      padding: 10px;
+      margin: 20px;
+    }
+
+  </style>
+</head>
+<body>
+    <h2>What is your favourite animal?</h2>
+    <form action="/send" method="POST">
+      <input type="radio" name="favanimal" id="dog"> Dog<br>
+      <input type="radio" name="favanimal" id="cat"> Cat<br>
+      <input type="radio" name="favanimal" id="goldfish"> Viktor, the goldfish<br>
+    </form>
+    <h2>Do you want to sign up for cat facts?</h2>
+    <form action="/send" method="POST">
+      <input type="radio" name="answer" value="yes" checked> Yes<br>
+      <input type="radio" name="answer" value="no"> No<br>
+    </form>
+    <button type="submit" id="catlove">I love cats!</button>
+    <button type="submit" id="signup">Sign up</button>
+    </form>
+</body>
+<script>
+  'use strict'
+
+  const catlove = document.getElementById("catlove");
+  catlove.disabled = true;
+
+  const signup = document.getElementById("signup");
+  signup.disabled = true;
+
+  const dog = document.getElementById('dog');
+  console.log(dog);
+  
+  function display() {  
+            if(dog.checked == true) { 
+              signup.disabled = false;
+              console.log('hola');
+            } 
+            else if (document.getElementById('cat').checked == true) { 
+              signup.disabled = false;
+              console.log('hola');
+            } 
+            else if(document.getElementById('goldfish').checked == true) {
+              signup.disabled = true;
+              console.log('hola');
+            }
+            else{
+              return
+            }
+        };
+
+  display();
+
+</script>
+</html>
