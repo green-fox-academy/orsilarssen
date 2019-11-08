@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Row<div class="grid">
+  </title>
+</head>
+<style>
+  body{
+    margin: 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 80px;
+    grid-gap: 10px;
+    background-color: white;
+    height: 100%;
+  }
+
+  .header {
+    display: flex;
+    grid-column: 1/2;
+    background-color: rgb(180, 84, 218);
+    align-items: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+
+  .header > div{
+    background-color: aqua;
+    width: 10%;
+    margin: 10px 10px 10px 20px;
+    height: 40%;
+  }
+
+  .main {
+    grid-column: 2 / 4;
+    background-color: rgb(245, 245, 63);
+    height: 400px;
+    margin-right: 20px;
+  }
+
+  .sidebar-left {
+    grid-column: 4 / 5;
+    background-color: rgb(98, 204, 57);
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-left: 20px;
+  }
+
+  .footer{
+    background-color: rgb(190, 182, 182);
+    grid-column: 1/4;
+    height: 50px;
+    margin:0 20px;
+  }
+</style>
+
+<body>
+  <div class="grid">
+
+    <header class="header">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </header>
+
+    <aside class="sidebar-left">Left</aside>
+
+    <main class="main">main</main>
+
+    <footer class="footer">footer</footer>
+
+  </div>
+</body>
+
+</html>

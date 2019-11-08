@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Row<div class="grid">
+  </title>
+</head>
+<style>
+  body{
+    margin: 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 200px 200px 200px;
+    grid-gap: 10px;
+    background-color: black;
+  }
+
+  .sidebar-1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background-color: violet;
+    /* grid-gap: 10px; */
+  }
+
+  .sidebar-2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: violet;
+    grid-gap: 10px;
+  }
+
+  .sidebar-3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background-color: violet;
+    grid-gap: 10px;
+  }
+
+  .sidebar-4 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: violet;
+  }
+
+  article {
+    grid-column: 2/4;
+    grid-row: 1/3;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-5 {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background-color: violet;
+  }
+
+  .inner-grid > div {
+    background-color: yellow;
+    height: 70%;
+    width: 90%;
+  }
+</style>
+
+<body>
+  <div class="grid">
+
+    <aside class="sidebar-1">Left</aside>
+
+    <aside class="sidebar-2">Left</aside>
+
+    <aside class="sidebar-3">Left</aside>
+
+    <aside class="sidebar-4">Left</aside>
+
+    <article class="inner-grid">
+      <div> inner </div>
+    </article>
+
+    <aside class="sidebar-5">Right</aside>
+
+  </div>
+</body>
+
+</html>

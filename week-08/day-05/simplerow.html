@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Row<div class="grid">
+  </title>
+</head>
+<style>
+  body{
+    margin: 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 300px;
+    grid-gap: 15px;
+    background-color: blueviolet;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .sidebar-left {
+    display: flex;
+    grid-column: 1/2;
+    background-color:orange;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article {
+    display: flex;
+    grid-column: 2 / 4;
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sidebar-right {
+    display: flex;
+    grid-column: 4 / 5;
+    background-color: orange;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <div class="grid">
+
+    <aside class="sidebar-left">Left</aside>
+
+    <article>60 is my ratio</article>
+
+    <aside class="sidebar-right">Right</aside>
+
+  </div>
+</body>
+
+</html>
