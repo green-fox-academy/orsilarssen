@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+</head>
+<style>
+.entry {background-color:lightgray}
+.entry:hover{background-color: greenyellow;}
+</style>
+<body>
+    <script>
+        async function update_todo(elem) {
+            var value = elem.value;
+            var id    = elem.id;
+            let req_body;
+            if (value == 'REMOVE'){
+                req_body = {'todo_id':id, action:'delete'}
+            }
+            else if (value == 'COMPLETE'){
+                req_body = {'todo_id':id, action:'complete'}
+            }
+            let response = await fetch("http://localhost:3001/update_todo", {method:'PUT',body:JSON.stringify(req_body),headers: {'Content-Type': 'application/json'}});
+        }
+    </script>
+ 
+    <h1>Todos</h1>
+    <h3>New Todo</h3>
+    <form action="http://localhost:3001/add_todo" method="POST">
+        <input type="text" name="todo" placeholder="Enter Todo Here" required>
+        <input  type="submit" value="Submit request" />
+    </form>
+    <table style="width:30%">
+    <% todo_items.forEach(function(todo_item) { %>
+        <tr class='entry'>
+            <% if(todo_item.completed === 1) { %>
+                <td style="text-decoration: line-through;"> <%= todo_item.todo %></td>
+            <% } else { %>
+                <td> <%= todo_item.todo %></td>
+            <% } %>
+            <td>
+                <input id ="<%= todo_item.id %>" type="submit", value="REMOVE" onclick="update_todo(this)"></button>
+                <br>
+                <input id ="<%= todo_item.id %>" type="submit", value="COMPLETE" onclick="update_todo(this)"></button>
+            </td>
+        </tr>
+    <% }); %>
+ 
+   </table>
+   
+</body>
+</html>

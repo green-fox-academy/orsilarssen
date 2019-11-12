@@ -19,10 +19,9 @@ let promise = new Promise(function (fulfill, reject) {
   setTimeout(() => {
     console.log('h2')
     fulfill('FULFILLED!')
-  }, 10);
+  }, 2000);
 
 })
 console.log('meow');
 promise.then(console.log);
-console.log('yes');
-
+console.log()
