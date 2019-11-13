@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <meta charset="utf-8"/>
+  <title>Media Query</title>
+  <link rel="stylesheet" href="secondtask.css">
+</head>
+<style>
+  .container {
+  display: flex;
+}
+
+.item {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.green {
+  background-color: #51d400;
+  flex-grow: 1;
+}
+
+.yellow {
+  background-color: #ffd62a;
+  flex-grow: 2;
+}
+
+.purple {
+  background-color: #b02aff;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 600px){
+  .container{
+    width: 100%;
+    flex-direction: column;
+  }
+}
+</style>
+
+<body>
+  <div class="container">
+    <div class="item green"></div>
+    <div class="item yellow"></div>
+    <div class="item purple"></div>
+  </div>
+</body>
+
+</html>
