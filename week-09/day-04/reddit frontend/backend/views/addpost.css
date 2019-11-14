@@ -1,0 +1,32 @@
+body{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 250px 250px 250px 250px;
+  grid-gap: 10px;
+  background-color:rgb(175, 162, 162);
+  height: 100%;
+}
+
+header {
+  display: flex;
+  grid-column: 1/2;
+  align-items: center;
+  text-align: center;
+  color: white;
+  grid-column: 1/4;
+  grid-row: 1/2;
+  overflow: hidden;
+  position: relative;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 200;
+  font-family: "Lato", sans-serif;
+  font-size: 80px;
+  letter-spacing: 30px;
+}
