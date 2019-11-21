@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const PORT = 3000;
+app.set('view engine', 'ejs');
+app.use('/static', express.static('static'));
+
 const cocktails = [
   { name: 'GIN FIZZ', price: 1520, contains: ['gin', 'sugar', 'lemon juice', 'soda'], isAlcoholic: true },
   { name: 'BLOODY MARY', price: 1650, contains: ['vodka', 'tomato juice', 'spices'], isAlcoholic: true },
@@ -14,18 +17,12 @@ const cocktails = [
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
-app.set('view engine', 'ejs');
+// app.get('/', (req, res) => {
+//   res.render('home.ejs', { alcoholList });
+// });
 
 app.get('/', (req, res) => {
-  var name = '';
-  if (Object.entries(req.query).length === 0) {
-    name = 'Guest';
-  } else {
-    name = req.query.name
-  }
-  res.render('home', {
-    title: 'Welcome Back, ' + name + '!',
-  });
+  res.render('home.ejs', { cocktails, alcoholList});
 });
 
 app.listen(PORT, () => {
