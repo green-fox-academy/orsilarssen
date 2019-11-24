@@ -10,10 +10,12 @@
 <body>
   <h1>Welcome to my bar, bitches!</h1>
   
-  <p> <% for (let i=0; i< alcoholList.length; i++){ %> 
-      <%= alcoholList[i] %>
+  <div class='alcohol-list'>
+      <p><a href='/'>ALL</a></p>
+      <% for (let i = 0; i < alcoholList.length; i++) { %>
+      <p><a href='/?alcohol=<%=alcoholList[i]%>'><%=alcoholList[i].toUpperCase()%></a></p>
       <% } %>
-  </p>
+  </div>
   <table style="width:60%">
     <tr>
       <th>Name</th>

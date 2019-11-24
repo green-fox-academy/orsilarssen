@@ -17,13 +17,28 @@ const cocktails = [
 
 const alcoholList = ['gin', 'vodka', 'rum', 'tequila'];
 
-// app.get('/', (req, res) => {
-//   res.render('home.ejs', { alcoholList });
-// });
+//app.get('/', (req, res) => {
+//  res.render('home.ejs', { cocktails, alcoholList });
+//});
+
+// with /?alcohol={alcholType} route (for example /?alcohol=gin), 
+// filter the cocktails and pass only these that contains the selected alcohol
 
 app.get('/', (req, res) => {
-  res.render('home.ejs', { cocktails, alcoholList});
+  //filters for alcohol
+  console.log(req.query)
+  let filtered = cocktails.filter(e => {
+    console.log(e)
+    return e.contains.includes(req.query.alcohol);
+  });
+  //console.log(filtered)
+  // render `home.ejs`
+  res.render('home', {
+    cocktails: Object.entries(req.query).length == 0 ? cocktails : filtered,
+    alcoholList: alcoholList
+  });
 });
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
