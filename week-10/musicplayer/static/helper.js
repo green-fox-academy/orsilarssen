@@ -4,27 +4,27 @@
 
 async function get_playlists() {
     let response = await fetch(`http://localhost:3001/playlists`);
-    let playlist;
+    let playlists;
    console.log('helloka');
     try {
-        playlist = await response.json()
+        playlists = await response.json()
     }
     catch(err){
         console.log(`Could not JSONIFY response:${response.body} Error:${err}`)
         return
     }
-    playlist.forEach(playlist => {list_playlist(playlist)});
+    playlists.forEach(playlist => {list_playlist(playlist)});
   };
    
     function list_playlist(playlist) {
-    let playlists = document.getElementById('playlists');
+    let playlist_table = document.getElementById('playlists');
     let tablerow = document.createElement('tr');
     let tabledata = document.createElement('td');
 
-    tablerow.appendChild(playlists);
-    tabledata.appendChild(tablerow);
+    playlist_table.appendChild(tablerow);
+    tablerow.appendChild(tabledata);
 
-    tabledata.innerText = playlists.playlist;
+    tabledata.innerText = playlist.playlist;
 };
 
 // async function get_playlists() {
@@ -198,3 +198,5 @@ function SetVolume(val) {
     player.volume = val / 100;
     console.log('After: ' + player.volume);
 };
+
+get_playlists();

@@ -71,11 +71,11 @@ try {
 
 app.get('/playlists', function(req, res) {
   var sql = "SELECT * FROM playlists";
-  conn.query(sql, function(err, posts) {
+  conn.query(sql, function(err, result) {
     if (err) {
       res.status(500).send({ error: 'Something failed!' });
     } else {
-      res.json(playlists);
+      res.json(result);
     }
   })
 });
