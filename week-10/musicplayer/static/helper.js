@@ -2,6 +2,56 @@
 
 'use strict';
 
+async function get_playlists() {
+    let response = await fetch(`http://localhost:3001/playlists`);
+    let playlist;
+   console.log('helloka');
+    try {
+        playlist = await response.json()
+    }
+    catch(err){
+        console.log(`Could not JSONIFY response:${response.body} Error:${err}`)
+        return
+    }
+    playlist.forEach(playlist => {list_playlist(playlist)});
+  };
+   
+    function list_playlist(playlist) {
+    let playlists = document.getElementById('playlists');
+    let tablerow = document.createElement('tr');
+    let tabledata = document.createElement('td');
+
+    tablerow.appendChild(playlists);
+    tabledata.appendChild(tablerow);
+
+    tabledata.innerText = playlists.playlist;
+};
+
+// async function get_playlists() {
+//     let response = await fetch(`http://localhost:3001/playlists`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({ playlists:playlists })
+//     })
+//     json_resp = await response.json()
+
+//     console.log('hola');
+  
+    // if (json_resp.length == 0) {
+    //   res.send('error');
+    // } else {
+    //   let lists = document.getElementById('lists');
+    //   let tablerow = document.createElement('tr');
+    //   tablerow.appendChild(lists);
+    //   let tabledata = document.createElement('td');
+    //   tabledata.appendChild(tablerow);
+    //   tabledata.innerHTML = playlists[0];
+    // }
+
+
+//control bar 
 let music = document.getElementById('music'); // id for audio element
 let duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
 let pButton = document.getElementById('pButton'); // play button
