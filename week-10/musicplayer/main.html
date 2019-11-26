@@ -76,14 +76,23 @@
                 </tr>
           </table>
     </div>
+    <!-- <div id="info">
+        <span style="float:left;" id="duration"></span><span style="float:right;" id="timeleft"></span>
+     </div> -->
     <div id="control">
-      <img src="rewind.svg" class="button" alt="rewind" width="30">
-      <img src="pause.svg" class="button" alt="rewind" width="30">
-      <img src="forward.svg" class="button" alt="rewind" width="30">
-      <img src="rewind.svg" class="button" alt="rewind" width="30">
-      <img src="rewind.svg" class="button" alt="rewind" width="30">
+        <audio id="music" preload="true">
+            <source src="Ars_Sonor_-_02_-_Never_Give_Up.mp3">
+              </audio>
+          <div id="audioplayer">
+              <button id="pButton" class="play"></button>
+            <div id="timeline">    
+                <span style="float:left;" id="duration"></span> <div id="playhead"></div> <span style="float:right;" id="timeleft"></span>
+                <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+              </div>
+          </div>
     </div>
   </div>
 </body>
-
+<script src="helper.js"></script>
 </html>
+
