@@ -2,6 +2,8 @@
 
 'use strict';
 
+window.onload = get_playlists();
+
 async function get_playlists() {
     let response = await fetch(`http://localhost:3001/playlists`);
     let playlists;
@@ -20,36 +22,38 @@ async function get_playlists() {
     let playlist_table = document.getElementById('playlists');
     let tablerow = document.createElement('tr');
     let tabledata = document.createElement('td');
-
+    tabledata.id = 'data';
     playlist_table.appendChild(tablerow);
     tablerow.appendChild(tabledata);
-
     tabledata.innerText = playlist.playlist;
 };
 
-// async function get_playlists() {
-//     let response = await fetch(`http://localhost:3001/playlists`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({ playlists:playlists })
-//     })
-//     json_resp = await response.json()
+async function get_tracks() {
+    let response = await fetch(`http://localhost:3001/tracks`);
+    let tracklist;
+   console.log('helloka');
+    try {
+        tracklist = await response.json()
+    }
+    catch(err){
+        console.log(`Could not JSONIFY response:${response.body} Error:${err}`)
+        return
+    }
+    tracklist.forEach(tracks => {list_tracks(tracks)});
+  };
+   
+    function list_tracks(tracks) {
+    let tracks_table = document.getElementById('tracks');
+    let trackrow = document.createElement('tr');
+    let trackdata = document.createElement('td');
+    trackdata.id = 'trackdata';
+    tracks_table.appendChild(trackrow);
+    trackrow.appendChild(trackdata);
+    trackdata.innerText = tracks.path;
+};
 
-//     console.log('hola');
-  
-    // if (json_resp.length == 0) {
-    //   res.send('error');
-    // } else {
-    //   let lists = document.getElementById('lists');
-    //   let tablerow = document.createElement('tr');
-    //   tablerow.appendChild(lists);
-    //   let tabledata = document.createElement('td');
-    //   tabledata.appendChild(tablerow);
-    //   tabledata.innerHTML = playlists[0];
-    // }
-
+let click = document.getElementById('playlists');
+click.onclick = get_tracks;
 
 //control bar 
 let music = document.getElementById('music'); // id for audio element
@@ -158,7 +162,7 @@ function getPosition(el) {
     return el.getBoundingClientRect().left;
 };
 
-var audio = document.getElementById("music");
+let audio = document.getElementById("music");
 
 // Countdown
 audio.addEventListener("timeupdate", function () {
@@ -198,5 +202,3 @@ function SetVolume(val) {
     player.volume = val / 100;
     console.log('After: ' + player.volume);
 };
-
-get_playlists();

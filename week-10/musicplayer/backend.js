@@ -80,6 +80,17 @@ app.get('/playlists', function(req, res) {
   })
 });
 
+app.get('/tracks', function(req, res) {
+  var sql = "select path from tracks inner join playlists on tracks.playlist_id = playlists.id where playlist_id = 2;";
+  conn.query(sql, function(err, result) {
+    if (err) {
+      res.status(500).send({ error: 'Something failed!' });
+    } else {
+      res.json(result);
+    }
+  })
+});
+
 // set port
 app.listen(3001, function () {
   console.log('Node app is running on port 3001');

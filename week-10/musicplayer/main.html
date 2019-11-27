@@ -12,79 +12,20 @@
   <div id="container">
     <div id="logo"><img src="foxplayer.png" id="fox" alt="Green Fox logo"></div>
     <div id="current">
-      
     </div>
-    <div>
-        <table id="playlists">
-            <!-- <tr>
-              <td>Playlists</td>
-            </tr>
-            <tr>
-              <td>All Tracks</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Favourites</td>
-              <td></td>
-            </tr>
-            <tr>
-                <td>Relaxing Music for Programming</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>Party</td>
-                <td></td>
-              </tr> -->
-          </table>
+    <div id="playlists">
+        
     </div>
     <div id="tracks">
-        <table>
-            <tr>
-              <td>1</td>
-              <td>hello</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>i love you</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>let me jump in your game</td>
-              <td></td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>hello</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>i love you</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>let me jump in your game</td>
-                <td></td>
-              </tr>
-              <tr>
-                  <td>3</td>
-                  <td>let me jump in your game</td>
-                  <td></td>
-                </tr>
-          </table>
+       
     </div>
-    <!-- <div id="info">
-        <span style="float:left;" id="duration"></span><span style="float:right;" id="timeleft"></span>
-     </div> -->
     <div id="control">
         <audio id="music" preload="true">
             <source src="Ars_Sonor_-_02_-_Never_Give_Up.mp3">
               </audio>
           <div id="audioplayer">
               <button id="pButton" class="play"></button>
+              <button id="skipButton" class="skipTrack"></button>
             <div id="timeline">    
                 <span style="float:left;" id="duration"></span> <div id="playhead"></div> <span style="float:right;" id="timeleft"></span>
                 <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>

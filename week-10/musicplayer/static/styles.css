@@ -12,6 +12,7 @@ body{
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   height: auto;
+  max-height: 600px;
   -webkit-box-shadow: 10px 10px 13px 1px rgba(158,152,158,1);
   -moz-box-shadow: 10px 10px 13px 1px rgba(158,152,158,1);
   box-shadow: 10px 10px 13px 1px rgba(158,152,158,1);
@@ -34,7 +35,7 @@ body{
   grid-row: 2/5;
   background-color: rgb(209, 152, 152);
   overflow: scroll;
-  max-height:400px;
+  width: 100%;
 }
 
 #tracks{
@@ -45,15 +46,6 @@ body{
   max-height:400px;
 }
 
-#control{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1/5;
-  grid-row: 5/6;
-  background-color: rgb(199, 192, 192);
-}
-
 #fox{
   height: 115px;
   width: 115px;
@@ -61,12 +53,14 @@ body{
 
 tr:nth-child(even){
   padding: 20px;
-  background-color: bisque
+  background-color: bisque;
+  width: 100%;
 }
 
 tr:nth-child(odd){
   padding: 20px;
   background-color: azure;
+  width: 100%;
 }
 
 table {
@@ -77,19 +71,38 @@ table {
 
 td{
   padding: 20px;
+  padding-right: 400px;
 }
 
-.button{
+td:hover{
+  background-color: aquamarine;
+}
+
+/* .button{
   padding: 10px;
+} */
+
+#control{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* justify-content: center;
+  align-items: center; */
+  grid-column: 1/5;
+  grid-row: 5/6;
+  background-color: rgb(199, 192, 192);
+  
 }
 
 #audioplayer{
+  grid-column: 5/10;
   width: 60%;
   height: 60px;
-  margin: 40px auto auto auto;
+  align-self: auto;
+  /* margin: 40px auto auto auto; */
 }
 
 #pButton{
+  /* grid-column: 1/4; */
   height:60px; 
   width: 60px;
   border: none;
@@ -100,12 +113,16 @@ td{
   outline:none;
 }
 
-.play{background: url('play.svg') ;}
+.play{
+  background: url('play.svg') ;
+  grid-column: 3/4;  
+}
 .pause{background: url('pause.svg') ;}
 .rewind{background: url('rewind.svg');}
 .forward{background: url('forward.svg');}
 
 #timeline{
+  grid-column: 5/10;
   width: 400px;
   height: 20px;
   margin-top: 20px;
@@ -115,6 +132,7 @@ td{
 }
 
 #playhead{
+  grid-column: 5/10;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -123,10 +141,15 @@ td{
 }
 
 #duration{
-  position: float left;
+  grid-column: 5/6;
+  /* position: float left; */
   margin: 40px auto auto auto;
 }
 
 #timeleft{
   margin: 40px auto auto auto;
+}
+
+#vol-control{
+  grid-column: 15/17;
 }
