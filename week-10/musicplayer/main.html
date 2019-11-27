@@ -6,13 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Lato?selection.family=Lato:300">
   <title>Music Player</title>
 </head>
 <body>
   <div id="container">
-    <div id="logo"><img src="foxplayer.png" id="fox" alt="Green Fox logo"></div>
+    <div id="logo"><img src="foxplayer.png" id="fox" alt="Green Fox logo" onclick="window.onload"><h3>Playlists</h3></div>
     <div id="current">
     </div>
+    
     <div id="playlists">
         
     </div>
@@ -22,10 +24,11 @@
     <div id="control">
         <audio id="music" preload="true">
             <source src="Ars_Sonor_-_02_-_Never_Give_Up.mp3">
+            <source src="static/Organoid_-_09_-_Purple_Drift.mp3">
               </audio>
           <div id="audioplayer">
               <button id="pButton" class="play"></button>
-              <button id="skipButton" class="skipTrack"></button>
+              <!-- <button id="skipButton" class="skipTrack"></button> -->
             <div id="timeline">    
                 <span style="float:left;" id="duration"></span> <div id="playhead"></div> <span style="float:right;" id="timeleft"></span>
                 <input id="vol-control" type="range" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>

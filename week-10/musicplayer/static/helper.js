@@ -2,7 +2,10 @@
 
 'use strict';
 
-window.onload = get_playlists();
+let logo = document.getElementById('fox');
+logo.onclick = function(){
+    window.onload = get_playlists();
+};
 
 async function get_playlists() {
     let response = await fetch(`http://localhost:3001/playlists`);
